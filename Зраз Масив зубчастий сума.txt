@@ -1,0 +1,60 @@
+using System;
+namespace Massiv_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Jagged Arrays ("Зубчаті" масиви)
+            int[][] mas = new int[3][];// 3 елементи в масиві буде
+
+            mas[0] = new int[2]; // allocate memory for the first subarray 2 елементи в масиві будемо вводити 2 змінні
+            mas[1] = new int[4]; // allocate memory for the second subarray 4 елементи в масиві будемо вводити4 змінні
+            mas[2] = new int[3]; // allocate memory for the third subarray 3  елементи в масиві
+                                 // Entering values from the keyboard
+
+
+            for (int i = 0; i < 3; i++)// повторюється три раз бо 3 елементи всього
+            {
+                Console.WriteLine("Enter {0} row", i + 1);
+                 for (int j = 0; j < mas[i].Length; j++)
+                {
+                    mas[i][j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            
+            // Displaying a jagged array to the screen
+            Console.WriteLine("Jagged array:");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < mas[i].Length; j++)
+                {
+                    Console.Write($"{ mas[i][j]}  ");
+                }
+                Console.WriteLine();
+            }
+
+
+            int sum = 0; //порахувати суму
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < mas[i].Length; j++)//порахувати суму кожного рядка
+                {
+                    sum += mas[i][j];
+                }
+            }
+            Console.WriteLine($"Sum = {sum}");
+
+
+            sum = 0;//цей цикл масив в масиві підходить тільки для зубчастих масивів
+            foreach (int[] y in mas)
+            {
+                foreach (int x in y)
+                {
+                    sum += x;
+                }
+            }
+            Console.WriteLine($"Sum = {sum}");
+        }
+    }
+}
