@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введіть 123");// ce napushe proga
+            int n = int.Parse(Console.ReadLine());//vvodumo rykamu
+
+            if (n == 123) //=
+            {
+                Console.WriteLine("Добре, то є добре.Ти знаєш цифри!");
+            }
+            else
+            {
+                Console.WriteLine("Шось ти не тойво на тицяв! Пробуй ше раз -123!!!");
+            }
+
+   
+        }
+    }
+}

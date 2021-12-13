@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+namespace Massiv_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //одновимірний масив із введенняс спочатку числа елемнтів
+            Console.WriteLine("Enter number of items  (in line)");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter number of array");
+            int[] mas = new int[n];
+            for (int i = 0; i < n; i++)
+                mas[i] = Convert.ToInt32(Console.ReadLine());
+            foreach (int x in mas)
+                Console.WriteLine("{0}", x);
+            Console.WriteLine();
+                    
+
+
+
+
+        }
+    }
+}

@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = 10;
+                Console.WriteLine(number);
+            int[] m = { 1, 2, 3, 4 };
+            Console.WriteLine($" Element 0 = {m[0]}");//Виведемо 1 елемент. 1 дорівню 0-порядковий номер
+            for (int i = 0; i < 4; i++) //виводимо всі числа масиву в !лінію!
+            Console.Write($"  {m [i]} ");
+
+        }
+    }
+}

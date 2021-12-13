@@ -1,0 +1,39 @@
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+            
+            // прога визначення парності числа
+        {
+            Console.WriteLine("число парне або ні");// ce napushe proga
+            int n = int.Parse(Console.ReadLine());//vvodumo rykamu
+
+           switch (n % 2 ==0)
+               
+            {
+                case true:
+                    Console.WriteLine($"The nuvber {n} is even");
+                     break;
+                case false:
+                    Console.WriteLine($"The number {n} is odd");
+                     break;
+            }
+
+            // прога визначення парності числа
+
+            if (n % 2 == 0)
+            {
+                Console.WriteLine($"Число {n} парне");
+            }
+            else
+            {
+                Console.WriteLine($"Число не {n} парне");
+            }
+        }
+    }
+}

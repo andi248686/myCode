@@ -1,0 +1,56 @@
+using System;
+using System.Linq;
+namespace Massiv_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             
+                        //рандомні числа для тестів
+
+                        Random r = new Random();// створюємо обєкт класу рандом
+
+                        int[] mas = new int[10]; //оголошення одновимірного масиву в якому 10 чисел
+
+                        for (int i = 0; i < 10; i++)
+                            mas[i] = r.Next(0, 11); // 0 входить в рандом 11 крайнє яке не вхожить
+
+            Console.WriteLine($"Random array");
+            foreach (int x in mas)
+            {
+                Console.Write($"{x } ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Sum = {0}", mas.Sum());// сума всіх елементів з підключенням лінк
+            Console.WriteLine("Min num in mas = {0} Max num in mas = {1}"  , mas.Min(), mas.Max());// макс і мін занчення елементів з підключенням лінк
+
+            //РОзвернутий масив, розвертає числа на 180 град
+
+            Array.Reverse(mas);
+            Console.WriteLine("Reverse mas at 180");
+            foreach (int x in mas)
+            {
+                Console.Write($"{x} ");
+            }
+
+            Console.WriteLine();
+            // сортування масиву від меншого 
+
+            Array.Sort(mas);
+            Console.WriteLine("Sort num");
+            foreach (int x in mas)
+            {
+                 
+                Console.Write($" {x} ");
+            }
+            Console.WriteLine();
+
+
+
+
+        }
+    }
+}

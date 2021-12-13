@@ -1,0 +1,78 @@
+using System;
+namespace Massiv_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] arr =
+                {
+                           {3, 6, 1},
+                           {4, 2, 7},
+                           {9, 0, 8}
+            };
+            Console.WriteLine(arr[0, 1]);//виводимо число або елем масиву ряд 0 стовп 1=1
+            Console.WriteLine(arr[2, 1]);//виводимо число або елем масиву ряд 2 стовп 0=0 
+
+            Console.WriteLine("Enter the number of rows");//оголошення кількості рядків
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of columns");//оголошення к-ті стовпчиків
+            int m = int.Parse(Console.ReadLine());
+            int[,] mas = new int[n, m]; //створення масиву 
+            Console.WriteLine($"Enter {n * m} items");
+            for (int i = 0; i < n; i++)//циклв в циклі
+            {
+                for (int j = 0; j < m; j++)//циклв в циклі
+                {
+                    mas[i, j] = int.Parse(Console.ReadLine());
+                }
+
+                Console.WriteLine("Source array");
+            }
+              /*  //новий цикл 
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < m; j++)
+                    {
+                        Console.Write($"{mas[i, j]}  ");
+                    }
+                    Console.WriteLine();
+                }
+*/
+
+
+                int sum = 0;
+                for (int i = 0; i < mas.GetLength(0); i++)//новий цикл mas.GetLength(0) повертає кількість радків
+                {
+                    for (int j = 0; j < mas.GetLength(1); j++) //mas.GetLength(1)повертає кількість стовпчиків
+                    {
+                        sum += mas[i, j];
+                    }
+                }
+                Console.WriteLine($"Sum = {sum}");
+
+
+                sum = 0;
+                foreach (int x in mas)//новий цик перевірить всі елементи масиву як верхній і додасть 
+                {
+                    sum = sum + x;
+                }
+                Console.WriteLine($"Sum = {sum}");
+
+            
+
+        }
+    
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

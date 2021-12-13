@@ -1,0 +1,146 @@
+
+
+            using System;
+            using System.Linq;
+
+namespace ConsoleApp22
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            
+            {
+            Console.WriteLine("Array");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("Якщо масив то завжди [] ");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("Array.Sort(myArray);  myArray.OrderBy(i => i).ToArray();  int[] MasNewSortDown = myArray.OrderByDescending(i => i).ToArray();");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("int[] x = Array.FindAll(myArray, i => i > 10); []Find, []FindLast, int FindIndex");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("Array myArray.OrderBy(i => i).ToArray()");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("CWR myArray[i]");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("CWR myArray.Sum(), Min, Max, myArray.Where(i => i % 2 == 0).Sum()");
+            Console.WriteLine("-------------------------------------------------------------");
+
+
+            Console.WriteLine($"Мiй одновимiрний масив int[] myArray =  10, 9, 8, 7, 6, 66, 12, 1 ;");
+
+
+            int[] myArray = { 10, 9, 8, 7, 6, 66, 12, 1 };
+                int Chuslo = 1;
+
+                // виводжу по черзi цифри масиву
+                Console.WriteLine("// виводжу по черзi цифри масиву for (int i = 0; i < myArray.Length; i++)");
+                for (int i = 0; i < myArray.Length; i++)
+                {
+
+                    Console.WriteLine($"Цифра масиву {Chuslo } = {myArray[i]}");
+                    Chuslo++;
+
+                }
+
+                // виводжу цифрy 1 масиву
+                Console.WriteLine();
+                Console.WriteLine("  // виводжу цифрy 1 масиву");
+                Console.WriteLine($"Цифра 1 масиву  myArray[0] =  {myArray[0]}");
+
+                Console.WriteLine("---------------------------------------------------------");
+
+                //сумую всі елементимасиву --------------------------------------------                    
+                Console.WriteLine($"сумую вс1 елементи масиву myArray.Sum() {myArray.Sum()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+                //максимальне число---------------------------------------
+                Console.WriteLine($"максимальне число myArray.Max() {myArray.Max()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+                //мінімальне число
+                Console.WriteLine($"м1н1мальне число myArray.Min() {myArray.Min()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+                //Сума парних чисел
+                Console.WriteLine($"Сума парних чиселmy Array.Where(i => i % 2 == 0).Sum() {myArray.Where(i => i % 2 == 0).Sum()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+
+                //Сума непарних чисел
+                Console.WriteLine($"Сума непарних чисел myArray.Where(i => i % 2 != 0).Sum() {myArray.Where(i => i % 2 != 0).Sum()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+                //Мінімальн непарне число 
+                Console.WriteLine($"М1н1мальн непарне число myArray.Where(i => i % 2 != 0).Min() {myArray.Where(i => i % 2 != 0).Min()}");
+                Console.WriteLine("---------------------------------------------------------");
+
+                //Видалити значення як1 повторяються 1 створити новий масив з лише ун1кальнити числами
+                int[] MasNew = myArray.Distinct().ToArray();
+                Console.WriteLine($"Видалити значення як1 повторяються 1 створити новий масив з лише ун1кальнити числами int[] MasNew = myArray.Distinct().ToArray();");
+                int num = 1;
+
+                for (int i = 0; i < MasNew.Length; i++)
+                {
+                    Console.WriteLine($"{num} число нового масиву {MasNew[i]}");
+                    num += 1;
+
+                }
+
+                Console.WriteLine("---------------------------------------------------------");
+
+                //По сортувати ел масиву спадання
+                Console.WriteLine($"По сортувати ел масиву спадання myArray.OrderByDescending(i => i).ToArray()");
+                int[] MasNewSortDown = myArray.OrderByDescending(i => i).ToArray();
+                for (int i = 0; i < MasNewSortDown.Length; i++)
+                {
+                    Console.WriteLine($"{MasNewSortDown[i]}");
+                }
+
+                Console.WriteLine("---------------------------------------------------------");
+
+                //По сортувати ел масиву зростання Array.SORT(myArray) ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                Console.WriteLine($"По сортувати ел масиву зростання метод Array.SORT(myArray)");
+                Array.Sort(myArray);
+                for (int i = 0; i < myArray.Length; i++)
+                {
+                    Console.WriteLine($"{myArray[i]}");
+                }
+
+                Console.WriteLine("---------------------------------------------------------");
+            
+            
+            //По сортувати ел масиву зростання
+            Console.WriteLine($"По сортувати ел масиву зростання vметод myArray.OrderBy(i => i).ToArray()");
+            int[] MasNewSortUp = myArray.OrderBy(i => i).ToArray();
+            for (int i = 0; i < MasNewSortUp.Length; i++)
+            {
+                Console.WriteLine($"{MasNewSortUp[i]}");
+            }
+
+            Console.WriteLine("---------------------------------------------------------");
+
+
+            //Знайти число відповідне умовам перше- Finde останнє -FindeLast або всі Array.FindeAll(myArray)
+            Console.WriteLine($"Знайти число вiдповiдне умовам перше- Finde останнє -FindeLast або всi int[] FindeAllMyArray = Array.FindAll(myArray, i => i > 33);");
+            int[] FindeAllMyArray = Array.FindAll(myArray, i => i > 10);
+            for (int i = 0; i < FindeAllMyArray.Length; i++)
+            {
+                Console.WriteLine(FindeAllMyArray[i]);
+            }
+
+            Console.WriteLine("---------------------------------------------------------");
+
+
+          
+
+
+
+
+
+        }
+    }
+    }
+
+
+
+

@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введіть 123");// ce napushe proga
+            int n = int.Parse(Console.ReadLine());//vvodumo rykamu
+
+           switch (n)
+               
+            {
+                case 1:
+                    Console.WriteLine("You typed 1");
+                    //break;
+                    goto case 2;//після цього вибору буде перехід до кейс 2
+                case 2:
+                    Console.WriteLine("Typed 2");
+                    return;//після цього вибору програма в методі мейн завершиться зовсім
+
+                case 3:
+                    Console.WriteLine("Typed 3");
+                    break;// завершить виконання світча
+
+                default:
+                    Console.WriteLine("You are mistaken");
+                    break;
+
+            }
+
+
+            Console.WriteLine("next");
+            
+        }
+    }
+}

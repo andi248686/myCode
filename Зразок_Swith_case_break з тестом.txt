@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" уди п≥деш");// ce napushe proga
+           string n = Console.ReadLine();//vvodumo rykamu  !!! tekst !!!
+
+           switch (n)
+               
+            {
+                case "right":
+                    Console.WriteLine("You typed  right");
+                    break;
+                case "left":
+                    Console.WriteLine("You write left");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
+
+            }
+            
+              
+            
+   
+        }
+    }
+}
