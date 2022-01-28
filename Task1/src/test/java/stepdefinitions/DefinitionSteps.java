@@ -1,0 +1,101 @@
+package stepdefinitions;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import manager.PageFactoryManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.InitPage;
+import pages.HomePage;
+
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
+import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
+import static org.junit.Assert.*;
+
+public class DefinitionSteps {
+
+    WebDriver driver;
+    PageFactoryManager pageFactoryManager;
+    HomePage homePage;
+    InitPage initPage;
+
+    @Before
+    public void setupClass() {
+        chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(100));
+        driver.manage().window().maximize();
+        pageFactoryManager = new PageFactoryManager(driver);
+    }
+
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Given("User opens {string} page")
+    public void userOpensHomePagePage(final String url) {
+        homePage = pageFactoryManager.getHomePage();
+        homePage.openHomePage(url);
+        System.out.println("open url");
+    }
+
+    @When("User clicks Russian language link")
+    public void userClicksRusLanguageLink() {
+        homePage.clickRusLanguageLink();
+    }
+
+    @Then("User checks the word {string} appears in the first paragraph")
+    public void userChecksTheWordKeywordAppearsInTheFirstParagraph(final String keyword) {
+        assertTrue(homePage.getFirstParagraphText().contains(keyword));
+    }
+
+    @When("User clicks Generate button")
+    public void userClicksGenerateButton() {
+        homePage.clickGenerateButton();
+        initPage = pageFactoryManager.getInitPage();
+        System.out.println("clicksGenerateButton");
+    }
+
+    @Then("User checks the first paragraph starts with {string}")
+    public void userChecksTheFirstParagraphStartsWithText(final String text) {
+        assertTrue(initPage.getFirstParagraphText().startsWith(text));
+    }
+
+    @And("User clicks on {string}")
+    public void userClicksOnType(final String type) {
+        if ("words".equals(type)) {
+            homePage.clickWordsRadio();
+        } else if ("bytes".equals(type)) {
+            homePage.clickBytesRadio();
+        }
+        System.out.println("secondTestOk");
+    }
+
+    @And("User inputs {string} into the field")
+    public void userInputsNumberIntoTheField(final String number) {
+        homePage.clearInputField();
+        homePage.sendKeysToInputField(number);
+    }
+
+    @Then("User checks the first paragraph has correct {string}")
+    public void userChecksTheFirstParagraphHasCorrectSize(final String size) {
+        String[] array = initPage.getFirstParagraphText().split(" ");
+        if (array.length == 1) {
+            assertEquals(Integer.parseInt(size), array[0].length());
+        } else {
+            assertEquals(Integer.parseInt(size), array.length);
+        }
+        System.out.println("3-dTestOk");
+    }
+
+
+}
